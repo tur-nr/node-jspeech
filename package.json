@@ -1,0 +1,55 @@
+{
+  "name": "jspeech",
+  "version": "0.0.0",
+  "description": "Create JSpeech Grammar Formats (JSGF).",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "repository": "git@github.com:tur-nr/node-jspeech.git",
+  "author": "Christopher Turner <turner296@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp",
+    "lint": "xo",
+    "pretest": "yarn run lint",
+    "test": "jest",
+    "prepublish": "yarn run build"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.23.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.2.1",
+    "babel-register": "^6.23.0",
+    "coveralls": "^2.12.0",
+    "del": "^2.2.2",
+    "eslint": "^3.17.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "jest": "^19.0.2",
+    "run-sequence": "^1.2.2",
+    "xo": "^0.17.1"
+  },
+  "xo": {
+    "next": true,
+    "semicolon": true,
+    "overrides": [
+      {
+        "files": "test/**/*.js",
+        "envs": [
+          "node",
+          "jest"
+        ]
+      }
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  }
+}
