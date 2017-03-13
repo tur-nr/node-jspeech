@@ -17,9 +17,6 @@
     "test": "jest",
     "prepublish": "yarn run build"
   },
-  "dependencies": {
-    "babel-runtime": "^6.23.0"
-  },
   "devDependencies": {
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",

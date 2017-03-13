@@ -2,7 +2,10 @@
   "presets": [
     ["env", {
       "targets": {
-        "node": "current"
+        "browsers": {
+          "Chrome": 33,
+          "Firefox": 44
+        }
       },
       "exclude": [
         "transform-regenerator"
@@ -10,10 +13,6 @@
     }]
   ],
   "plugins": [
-    ["transform-runtime", {
-      "polyfill": false,
-      "regenerator": false
-    }],
     "transform-export-extensions",
     "transform-object-rest-spread"
   ]
