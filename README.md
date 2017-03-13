@@ -5,11 +5,9 @@
 
 [Node.js](https://nodejs.org) module for creating [JSpeech Grammar Formats, _JSGF_](https://www.w3.org/TR/jsgf).
 
+_Note_: `jspeech` is just a api for creating JSGF. The format specification can be read here: [https://www.w3.org/TR/jsgf](https://www.w3.org/TR/jsgf).
+
 ## Usage
-
-_Note: `jspeech` is just a api for creating JSGF. The format specification can be read here: [https://www.w3.org/TR/jsgf](https://www.w3.org/TR/jsgf)._
-
-### Example
 
 ```javascript
 import jspeech from 'jspeech';
@@ -48,12 +46,12 @@ grammar.rule('greet', '<greeting> buddy'); // <greet> = <greeting> buddy;
 Only public rules are exported to a recogniser. To make a rule public use the `.public` API on the grammar object.
 
 ```javascript
-grammar.public.rule('friend', 'everyone');
+grammar.public.rule('friend', 'everyone'); // public <friend> = everyone;
 ```
 
 #### Sequences
 
-To ensure that a rule keeps a sequence of tokens together use the `.word` method to wrap the tokens in quotes.
+To ensure that a rule keeps a sequence of tokens together use the `.word()` method to wrap the tokens in quotes.
 
 ```javascript
 grammar.word('nyc', 'New York City'); // <nyc> = "New York City";
@@ -61,7 +59,7 @@ grammar.word('nyc', 'New York City'); // <nyc> = "New York City";
 
 #### Alternatives, Weights and Groups
 
-Alternatives allow variations of different rules and/or rule tokens. This allows for a more complex grammar format. Use the `.alt` method to create different alternatives.
+Alternatives allow variations of different rules and/or rule tokens. This allows for a more complex grammar format. Use the `.alt()` method to create different rule alternatives.
 
 ```javascript
 grammar.alt('cities', ['London', 'Sydney', 'Tokyo']); // <cities> = London | Sydney | Tokyo;
